@@ -1,4 +1,5 @@
 .gradle/
+gradle/wrapper
 build/
 allure-results/
 !gradle/wrapper/gradle-wrapper.jar
