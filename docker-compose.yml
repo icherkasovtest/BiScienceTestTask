@@ -1,0 +1,16 @@
+services:
+  tests:
+    build: .
+    environment:
+      GROUP: "${GROUP:-ALL}"
+      THREAD_COUNT: "${THREAD_COUNT:-4}"
+      BROWSER: "${BROWSER:-chromium}"
+      HEADLESS: "true"
+    volumes:
+      - ./build/allure-results:/app/build/allure-results
+    command: >
+      test --no-daemon
+      -PGROUP=${GROUP:-ALL}
+      -PTHREAD_COUNT=${THREAD_COUNT:-4}
+      -PBROWSER=${BROWSER:-chromium}
+      -PHEADLESS=true
